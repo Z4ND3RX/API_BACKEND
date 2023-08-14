@@ -2,7 +2,7 @@ import { Router } from "express";
 import { PrismaClient } from "@prisma/client";
 
 const router = Router();
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({});
 
 router.get('/posts', async (req, res) => {
     const posts = await prisma.post.findMany()
